@@ -56,6 +56,11 @@ $(document).ready(function () {
         var Latitude = response.coord.lat.toString();
         console.log(Latitude);
 
+        //Parse weather icon
+        var weatherIconCurrentRaw = response.weather[0].icon;
+        var weatherIconCurrent = "https://openweathermap.org/img/wn/" + weatherIconCurrentRaw + "@2x.png";
+        console.log(weatherIconCurrent);
+
         var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?lat=" + Latitude + "&lon=" + Longitude + "&appid=" + myApiKey;
 
         $.ajax({
@@ -68,7 +73,9 @@ $(document).ready(function () {
         });
 
 
-        var queryURL3 = "https://api.openweathermap.org/data/2.5/forecast?q=" + citySearch + "&appid=" + myApiKey;
+        // var queryURL3 = "https://api.openweathermap.org/data/2.5/forecast?q=" + citySearch + "&appid=" + myApiKey;
+
+        var queryURL3 = "https://api.openweathermap.org/data/2.5/onecall?lat=" + Latitude + "&lon=" + Longitude + "&appid=" + myApiKey;
 
         $.ajax({
             url: queryURL3,
@@ -79,6 +86,41 @@ $(document).ready(function () {
             console.log(response3);
 
             // need to iterate and grab one 3-hour forecast from each of the 5 days...
+
+            // variables for 5 future days' forecasts
+            var day1 = response3.daily[0];
+            var day2 = response3.daily[1];
+            var day3 = response3.daily[2];
+            var day4 = response3.daily[3];
+            var day5 = response3.daily[4];
+            // variable to parse items needed for 5-day forecasts...
+            // dates
+            var date1 = day1.dt;
+            var date2 = day2.dt;
+            var date3 = day3.dt;
+            var date4 = day4.dt;
+            var date5 = day5.dt;
+            // temps
+            var date1Temp = day1.temp.day;
+            var date2Temp = day2.temp.day;
+            var date3Temp = day3.temp.day;
+            var date4Temp = day4.temp.day;
+            var date5Temp = day5.temp.day;
+            // humidity
+            var date1Humidity = day1.humidity;
+            console.log(date1Humidity);
+
+            var weatherIconDate1Raw = day1.weather[0].icon;
+            var weatherIconDate1 = "https://openweathermap.org/img/wn/" + weatherIconDate1Raw + "@2x.png";
+            console.log(weatherIconDate1);
+
+
+
+
+
+
+
+
 
         });
 
