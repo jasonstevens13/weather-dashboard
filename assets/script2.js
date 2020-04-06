@@ -5,16 +5,13 @@ $(document).ready(function () {
     $("#searchBtn").on("click", function (event) {
         event.preventDefault();
 
-        // function storeSearches() {
-        //     // Stringify and set "todos" key in localStorage to todos array
-        //     localStorage.setItem("cities", JSON.stringify());
-        //   }
-
 
         var cityInput1 = document.querySelector("#searchBtnInput");
         var citySearch = cityInput1.value;
         var myApiKey = "030a2eeeb4406f7a775462f8704bfe82";
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&appid=" + myApiKey;
+
+        localStorage.setItem("city", citySearch);
 
         // vars for updating search list in DOM
         var tr = $("<tr>", { id: "tr" + citySearch });
@@ -122,6 +119,7 @@ $(document).ready(function () {
                 // var forecast = response3;
                 console.log(response3);
 
+                // For loop through first 5 days of 7 day forecast
                 for (let i = 0; i < (response3.daily.length - 2); i++) {
 
                     var day = response3.daily[i];
