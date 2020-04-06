@@ -15,7 +15,7 @@
 
 <body>
 
-    <div class="jumbotron jumbotron-fluid bg-dark mb-0">
+    <div class="jumbotron jumbotron-fluid bg-dark mb-0" style="max-height: 150px;">
         <div class="container">
             <h1 class="display-4 text-center text-white">Weather Dashboard</h1>
         </div>
@@ -27,9 +27,9 @@
         <div class="col-3 bg-secondary">
             <div id="citySelector" class="input-group pb-3 pt-3">
                 <input id="searchBtnInput" type="text" class="form-control"
-                    aria-label="Dollar amount (with dot and two decimal places)">
+                    aria-label="Dollar amount (with dot and two decimal places)" placeholder="City/Zip Code">
                 <div class="input-group-append">
-                    <span id="searchBtn" class="input-group-text btn">
+                    <span id="searchBtn" class="input-group-text btn bg-primary text-white">
                         <svg class="bi bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -64,8 +64,9 @@
             <div class="row pl-3 pt-3 pb-3">
                 <div class="card col-12">
                     <div class="card-body">
-                        <h2>
+                        <h2 id="currentCity">
                             Search/Select a city to display weather...
+
                         </h2>
                         <p id="currentTemp">
                             Temperature:
@@ -95,7 +96,7 @@
                             style="max-width: 12rem; max-height: 16rem;">
                             <div id="0date" class="card-header">Day1</div>
                             <div class="card-body">
-                                <h6 id="0dateIcon" class="card-title">Icon</h6>
+                                <h6 id="0dateIcon" class="card-title"></h6>
                                 <h6 id="0dateTemp" class="card-title">Temp: </h6>
                                 <h6 id="0dateHumidity" class="card-title">Humidity: </h6>
                             </div>
@@ -104,7 +105,7 @@
                         <div class="card text-white bg-primary mb-3 mr-3" style="max-width: 12rem; max-height: 16rem;">
                             <div id="1date" class="card-header">Day2</div>
                             <div class="card-body">
-                                <h6 id="1dateIcon" class="card-title">Icon</h6>
+                                <h6 id="1dateIcon" class="card-title"></h6>
                                 <h6 id="1dateTemp" class="card-title">Temp: </h6>
                                 <h6 id="1dateHumidity" class="card-title">Humidity: </h6>
                             </div>
@@ -113,7 +114,7 @@
                         <div class="card text-white bg-primary mb-3 mr-3" style="max-width: 12rem; max-height: 16rem;">
                             <div id="2date" class="card-header">Day3</div>
                             <div class="card-body">
-                                <h6 id="2dateIcon" class="card-title">Icon</h6>
+                                <h6 id="2dateIcon" class="card-title"></h6>
                                 <h6 id="2dateTemp" class="card-title">Temp: </h6>
                                 <h6 id="2dateHumidity" class="card-title">Humidity: </h6>
                             </div>
@@ -122,7 +123,7 @@
                         <div class="card text-white bg-primary mb-3 mr-3" style="max-width: 12rem; max-height: 16rem;">
                             <div id="3date" class="card-header">Day4</div>
                             <div class="card-body">
-                                <h6 id="3dateIcon" class="card-title">Icon</h6>
+                                <h6 id="3dateIcon" class="card-title"></h6>
                                 <h6 id="3dateTemp" class="card-title">Temp: </h6>
                                 <h6 id="3dateHumidity" class="card-title">Humidity: </h6>
                             </div>
@@ -131,7 +132,7 @@
                         <div class="card text-white bg-primary mb-3 mr-3" style="max-width: 12rem; max-height: 16rem;">
                             <div id="4date" class="card-header">Day5</div>
                             <div class="card-body">
-                                <h6 id="4dateIcon" class="card-title">Icon</h6>
+                                <h6 id="4dateIcon" class="card-title"></h6>
                                 <h6 id="4dateTemp" class="card-title">Temp: </h6>
                                 <h6 id="4dateHumidity" class="card-title">Humidity: </h6>
                             </div>

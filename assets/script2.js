@@ -63,7 +63,8 @@ $(document).ready(function () {
 
 
             // Fill in html with current data
-            $("#currentCity").text(cityResult + "(" + date + ")" + "Icon");
+            $("#currentCity").text(cityResult + "(" + date + ")");
+            $("#currentCity").append($("<img>", { src: weatherIconCurrent }));
             $("#currentTemp").text("Temperature: " + temp);
             $("#currentHumidity").text("Humidity: " + humidity);
             $("#currentWindSpeed").text("Wind Speed: " + windSpeed);
@@ -84,12 +85,6 @@ $(document).ready(function () {
                 $("#currentUV").text("UV Index: " + uvIndex);
 
             });
-
-
-
-
-
-
 
 
 
@@ -128,10 +123,9 @@ $(document).ready(function () {
                     var htmlElIdDateHumidity = "#" + [i] + "dateHumidity";
 
                     $(htmlElIdDate).text(date);
-                    $(htmlElIdDateIcon).text("");
+                    $(htmlElIdDateIcon).append($("<img>", { src: weatherIcon }));
                     $(htmlElIdDateTemp).text("Temp: " + dateTemp);
                     $(htmlElIdDateHumidity).text("Humidity: " + dateHumidity);
-
 
                 }
 
