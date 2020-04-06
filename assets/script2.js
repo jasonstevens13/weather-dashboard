@@ -5,10 +5,29 @@ $(document).ready(function () {
     $("#searchBtn").on("click", function (event) {
         event.preventDefault();
 
+        // function storeSearches() {
+        //     // Stringify and set "todos" key in localStorage to todos array
+        //     localStorage.setItem("cities", JSON.stringify());
+        //   }
+
+
         var cityInput1 = document.querySelector("#searchBtnInput");
         var citySearch = cityInput1.value;
         var myApiKey = "030a2eeeb4406f7a775462f8704bfe82";
         var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + citySearch + "&appid=" + myApiKey;
+
+        // vars for updating search list in DOM
+        var tr = $("<tr>", { id: "tr" + citySearch });
+        var th = $("<th>", { id: "th" + citySearch, scope: "row" });
+        var td = $("<td>", { id: "td" + citySearch });
+
+        // updates search list here
+        $("#searchList").prepend(tr);
+        $("#tr" + citySearch).append(th);
+        $("#tr" + citySearch).append(td);
+        $("#td" + citySearch).text(citySearch);
+
+
 
         // api call for current weather
         $.ajax({
@@ -70,6 +89,11 @@ $(document).ready(function () {
             $("#currentWindSpeed").text("Wind Speed: " + windSpeed);
 
 
+
+
+
+
+
             // second api call to the uv api (must get lon and lat from above data)
             var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?lat=" + Latitude + "&lon=" + Longitude + "&appid=" + myApiKey;
 
@@ -85,7 +109,6 @@ $(document).ready(function () {
                 $("#currentUV").text("UV Index: " + uvIndex);
 
             });
-
 
 
 
