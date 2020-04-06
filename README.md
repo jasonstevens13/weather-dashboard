@@ -11,7 +11,15 @@ The application allows for a user to experience a customized weather dashboard, 
 The application was built by use of html, Bootstrap CSS framework, & Javascript. Furthermore, locatal browser storage will be utilized to allow for a seemless user experience upon return.
 
 # How to Use
+
+Search by City through input box on left column.
 ![screenshot1](https://github.com/jasonstevens13/weather-dashboard/blob/master/assets/pics/enter.jpg)
-![screenshot2](https://github.com/jasonstevens13/weather-dashboard/blob/master/assets/pics/localStorage.jpg)
-![screenshot3](https://github.com/jasonstevens13/weather-dashboard/blob/master/assets/pics/search.jpg)
-![screenshot4](https://github.com/jasonstevens13/weather-dashboard/blob/master/assets/pics/search2.jpg)
+
+Current weather displays in primary section...
+![screenshot2](https://github.com/jasonstevens13/weather-dashboard/blob/master/assets/pics/search.jpg)
+
+5-Day Forecast displays in bottom section...
+![screenshot3](https://github.com/jasonstevens13/weather-dashboard/blob/master/assets/pics/search2.jpg)
+
+Local storage takes in the city name.
+![screenshot4](https://github.com/jasonstevens13/weather-dashboard/blob/master/assets/pics/localStorage.jpg)
