@@ -1,8 +1,6 @@
 
 $(document).ready(function () {
 
-    console.log("hello this is a test 2");
-
 
     $("#searchBtn").on("click", function (event) {
         event.preventDefault();
@@ -64,6 +62,12 @@ $(document).ready(function () {
             console.log(weatherIconCurrent);
 
 
+            // Fill in html with current data
+            $("#currentCity").text(cityResult + "(" + date + ")" + "Icon");
+            $("#currentTemp").text("Temperature: " + temp);
+            $("#currentHumidity").text("Humidity: " + humidity);
+            $("#currentWindSpeed").text("Wind Speed: " + windSpeed);
+
 
             // second api call to the uv api (must get lon and lat from above data)
             var queryURL2 = "https://api.openweathermap.org/data/2.5/uvi?lat=" + Latitude + "&lon=" + Longitude + "&appid=" + myApiKey;
@@ -76,8 +80,17 @@ $(document).ready(function () {
                 var uvIndex = response2.value;
                 console.log(uvIndex);
 
+                // Fill in htl with uv index
+                $("#currentUV").text("UV Index: " + uvIndex);
 
             });
+
+
+
+
+
+
+
 
 
 
@@ -105,13 +118,20 @@ $(document).ready(function () {
                     var dateTemp = temp1 + " °F";
                     var dateHumidity = day.humidity + " %";
 
+
                     var weatherIconRaw = day.weather[0].icon;
                     var weatherIcon = "https://openweathermap.org/img/wn/" + weatherIconRaw + "@2x.png";
 
-                    console.log(date);
-                    console.log(dateTemp);
-                    console.log(dateHumidity);
-                    console.log(weatherIcon);
+                    var htmlElIdDate = "#" + [i] + "date";
+                    var htmlElIdDateIcon = "#" + [i] + "dateIcon";
+                    var htmlElIdDateTemp = "#" + [i] + "dateTemp";
+                    var htmlElIdDateHumidity = "#" + [i] + "dateHumidity";
+
+                    $(htmlElIdDate).text(date);
+                    $(htmlElIdDateIcon).text("");
+                    $(htmlElIdDateTemp).text("Temp: " + dateTemp);
+                    $(htmlElIdDateHumidity).text("Humidity: " + dateHumidity);
+
 
                 }
 
